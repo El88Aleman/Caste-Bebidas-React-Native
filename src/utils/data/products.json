@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "title": "Fernet Branca",
+    "description": "1L",
+    "price": 12000,
+    "quantity": 68,
+    "category": "Fernet/Gancia",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357169/Caste%20Bebidas/nwsrpptr3gu0yfuug0de.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Gancia",
+    "description": "1L",
+    "price": 6000,
+    "quantity": 34,
+    "category": "Fernet/Gancia",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357114/Caste%20Bebidas/wo6edgzbkplt57hzqq0r.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Vino Cabernet Ruttini",
+    "description": "750cc",
+    "price": 10500,
+    "quantity": 61,
+    "category": "Vinos",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357099/Caste%20Bebidas/evvglxnexblcyjtasvnv.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Whisky Jack Daniels",
+    "description": "750cc",
+    "price": 19000,
+    "quantity": 24,
+    "category": "Licores/Whisky",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357145/Caste%20Bebidas/zslil7aaieaurtusgzlx.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Gin-Tonic Beefeater",
+    "description": "750cc",
+    "price": 15000,
+    "quantity": 44,
+    "category": "Gin-Tonic",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357161/Caste%20Bebidas/nhnnr4cjd1jgbplnr8fr.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Cerveza Budweisser",
+    "description": "900cc",
+    "price": 1200,
+    "quantity": 194,
+    "category": "Cervezas",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357152/Caste%20Bebidas/jjdqnyywaqomlpfcn4st.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Licor Sheridan´s",
+    "description": "750cc",
+    "price": 18800,
+    "quantity": 34,
+    "category": "Licores/Whisky",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357141/Caste%20Bebidas/vaw6lvshx6tn6nh0un6p.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Champagne Chandon",
+    "description": "750cc",
+    "price": 9000,
+    "quantity": 94,
+    "category": "Champagne",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357163/Caste%20Bebidas/by9lnwszk5tkn8g7grqc.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Vodka Smirnoff",
+    "description": "900cc",
+    "price": 5000,
+    "quantity": 142,
+    "category": "Vodka",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357171/Caste%20Bebidas/hw38fpdom9thdzn5ap0v.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Vino Malbec Audaz",
+    "description": "750cc",
+    "price": 4300,
+    "quantity": 52,
+    "category": "Vinos",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357173/Caste%20Bebidas/vseidrwp54z3rhatfsyg.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Vino Malbec Trumpeter",
+    "description": "750cc",
+    "price": 7700,
+    "quantity": 52,
+    "category": "Vinos",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357101/Caste%20Bebidas/ygmwl91q5p2mhxtmc0xa.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Vino Cabernet Sombreros",
+    "description": "750cc",
+    "price": 6100,
+    "quantity": 36,
+    "category": "Vinos",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357095/Caste%20Bebidas/zxz832l2guxyadrhcqkr.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Vino Cabernet Alambrados",
+    "description": "750cc",
+    "price": 6100,
+    "quantity": 22,
+    "category": "Vinos",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357094/Caste%20Bebidas/bxjrydey98vstrrgy6f8.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Whisky Jonnye Walker edición Game Of Thrones",
+    "description": "750cc",
+    "price": 27300,
+    "quantity": 12,
+    "category": "Licores/Whisky",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357090/Caste%20Bebidas/idpxdpfcjtkhrdfahpyn.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Gin-Tonic Alquimista",
+    "description": "750cc",
+    "price": 16400,
+    "quantity": 41,
+    "category": "Gin-Tonic",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357129/Caste%20Bebidas/dz3bmfcben0jlqupffdr.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Whisky Irish Jameson",
+    "description": "750cc",
+    "price": 17500,
+    "quantity": 23,
+    "category": "Licores/Whisky",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357128/Caste%20Bebidas/p7pshgowr8vvf2r32xqs.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Vodka Skyy Maracuya",
+    "description": "900cc",
+    "price": 4300,
+    "quantity": 86,
+    "category": "Vodka",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357127/Caste%20Bebidas/g1bzllu6goxw1rqst1zj.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Licor Baileys",
+    "description": "750cc",
+    "price": 19200,
+    "quantity": 48,
+    "category": "Licores/Whisky",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357127/Caste%20Bebidas/zxmvg0emvehdcronjato.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Vodka Absolut Vainilla, Lime, Apple",
+    "description": "750cc",
+    "price": 14700,
+    "quantity": 118,
+    "category": "Vodka",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357119/Caste%20Bebidas/su2pxkzptgnhog72kksw.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Champagne Baron B",
+    "description": "750cc",
+    "price": 11200,
+    "quantity": 38,
+    "category": "Champagne",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357161/Caste%20Bebidas/mw3id06mgxebc4f6o5mj.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Ceveza Patagonia Lagger",
+    "description": "900cc",
+    "price": 2400,
+    "quantity": 41,
+    "category": "Cervezas",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357158/Caste%20Bebidas/rwnhflfxp63vg4cgrdae.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Cerveza Brahma",
+    "description": "900cc",
+    "price": 1150,
+    "quantity": 93,
+    "category": "Cervezas",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357157/Caste%20Bebidas/fjwq8ev0oapxj3gzteif.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Lata Imperial",
+    "description": "490cc",
+    "price": 750,
+    "quantity": 133,
+    "category": "Cervezas",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357155/Caste%20Bebidas/fd18cp4mvbiwxcc5nheu.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Lata Golsch",
+    "description": "490cc",
+    "price": 810,
+    "quantity": 71,
+    "category": "Cervezas",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357155/Caste%20Bebidas/qgcggv6ylfstzv198dj3.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Red Label Jonnye Walker",
+    "description": "750cc",
+    "price": 18400,
+    "quantity": 42,
+    "category": "Licores/Whisky",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357154/Caste%20Bebidas/tn6siuizfjimyk7zqi5m.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Jagermeister",
+    "description": "750cc",
+    "price": 19600,
+    "quantity": 67,
+    "category": "Licores/Whisky",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707509589/Caste%20Bebidas/qthbdyjwc0adwsmg0qtf.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Holdmoser",
+    "description": "750cc",
+    "price": 14300,
+    "quantity": 89,
+    "category": "Licores/Whisky",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357171/Caste%20Bebidas/lshdvm5rhmsndwnumsld.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Gin-Tonic Herederos",
+    "description": "750cc",
+    "price": 13900,
+    "quantity": 91,
+    "category": "Gin-Tonic",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357137/Caste%20Bebidas/r1zw7a1yuxiearutxb6j.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Lata Budweiser",
+    "description": "490cc",
+    "price": 700,
+    "quantity": 141,
+    "category": "Cervezas",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357151/Caste%20Bebidas/qcvs4l1hbq9tvcqb9trm.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "Lata Heineken",
+    "description": "490cc",
+    "price": 850,
+    "quantity": 118,
+    "category": "Cervezas",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357142/Caste%20Bebidas/q4pheq3xdpxqkq2m4lbt.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 31,
+    "title": "Pinina Corona",
+    "description": "490cc",
+    "price": 950,
+    "quantity": 107,
+    "category": "Cervezas",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357149/Caste%20Bebidas/we1ce6innfypfo6wupoq.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 32,
+    "title": "Lata Miller",
+    "description": "490cc",
+    "price": 800,
+    "quantity": 143,
+    "category": "Cervezas",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357147/Caste%20Bebidas/gtttqhynhpexstgvwso6.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 33,
+    "title": "Vodka Sernova",
+    "description": "900cc",
+    "price": 4100,
+    "quantity": 113,
+    "category": "Vodka",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357143/Caste%20Bebidas/u1uy7xwa3ir95anf6edp.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 34,
+    "title": "Bombay",
+    "description": "750cc",
+    "price": 21300,
+    "quantity": 37,
+    "category": "Licores/Whisky",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357141/Caste%20Bebidas/dkkxmuirzwit32zjmsax.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "Vodka Skyy Coco",
+    "description": "900cc",
+    "price": 4300,
+    "quantity": 87,
+    "category": "Vodka",
+    "thumbnail": "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707357129/Caste%20Bebidas/jq9nagxabe1k4pnlosj3.jpg",
+    "images": [
+      "https://i.dummyjson.com/data/products/1/1.jpg",
+      "https://i.dummyjson.com/data/products/1/2.jpg",
+      "https://i.dummyjson.com/data/products/1/3.jpg",
+      "https://i.dummyjson.com/data/products/1/4.jpg",
+      "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+    ]
+  }
+]
