@@ -1,14 +1,17 @@
 import { StyleSheet, Text, View } from "react-native";
-import { Feather } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 
 const OrderItem = ({ order }) => {
   return (
     <View style={styles.card}>
       <View style={styles.textContainer}>
         <Text style={styles.text}>{order.createdAt}</Text>
-        <Text style={styles.text2}>$ {order.total}</Text>
+        <Text style={styles.text}>Bebida: {order.items[0].title}</Text>
+        <Text style={styles.text}>Tamaño: {order.items[0].description}</Text>
+        <Text style={styles.text}>Catidad: {order.items[0].quantity}</Text>
+        <Text style={styles.text2}>Precio: ${order.total}</Text>
       </View>
-      <Feather name="search" size={30} color="black" />
+      <Entypo name="trash" size={25} color="white" />
     </View>
   );
 };

@@ -1,14 +1,12 @@
 import { View, Text, Pressable, StyleSheet, Image } from "react-native";
 import { Entypo } from "@expo/vector-icons";
-import { deleteCartItem, addCartItem } from "../features/cart/cartSlice";
+import { deleteCartItem } from "../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
 import CounterCart from "./CounterCart";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
-  const handlerAddCartItem = (quantity) => {
-    dispatch(addCartItem({ ...item, quantity }));
-  };
+
   return (
     <View style={styles.container}>
       <Image

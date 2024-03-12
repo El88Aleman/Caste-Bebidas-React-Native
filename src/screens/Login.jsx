@@ -1,4 +1,14 @@
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  Pressable,
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
 import { Input } from "@rneui/themed";
 import { useState } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -46,69 +56,80 @@ const Login = ({ navigation }) => {
   };
 
   return (
-    <View style={{ ...styles.container, top: top }}>
-      <Image
-        style={styles.img}
-        source={{
-          uri: "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707155357/Caste%20Bebidas/xme6decqhdsbponshkag.png",
-        }}
-      />
-      <View style={styles.containerLogin}>
-        <Text style={styles.titulo}>INICIAR SESION</Text>
-        <Input
-          placeholder="Email"
-          placeholderTextColor="white"
-          inputStyle={{ color: "white" }}
-          errorMessage={errorEmail}
-          errorStyle={{ color: "black" }}
-          onChangeText={(t) => setEmail(t)}
-        />
-        <Input
-          placeholder="Contraseña"
-          placeholderTextColor="white"
-          inputStyle={{ color: "white" }}
-          secureTextEntry={true}
-          errorMessage={errorPassword}
-          errorStyle={{ color: "black" }}
-          onChangeText={(t) => setPassword(t)}
-        />
-        <View style={{ alignItems: "center", margin: 10 }}>
-          <Button
-            title="Ingresar"
-            type="outline"
-            containerStyle={{
-              backgroundColor: "#F9C400",
-              width: 150,
-              marginBottom: 10,
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.container}
+    >
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={{ ...styles.container, top: top }}>
+          <Image
+            style={styles.img}
+            source={{
+              uri: "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707155357/Caste%20Bebidas/xme6decqhdsbponshkag.png",
             }}
-            buttonStyle={{ borderColor: "#F9C400", border: 1 }}
-            titleStyle={{ color: "black", fontFamily: "Poppins" }}
-            onPress={onSubmit}
           />
-          <Text style={{ color: "white", fontFamily: "Poppins", margin: 5 }}>
-            Ingresar con
-          </Text>
-          <Pressable>
-            <MaterialCommunityIcons name="gmail" size={50} color="white" />
-          </Pressable>
-          <Text style={{ color: "white", fontFamily: "Poppins", margin: 10 }}>
-            No tenes una cuenta?
-          </Text>
-          <Button
-            title="Registrarse"
-            type="outline"
-            containerStyle={{
-              backgroundColor: "#F9C400",
-              width: 150,
-              marginBottom: 10,
-            }}
-            buttonStyle={{ borderColor: "#F9C400", border: 1 }}
-            titleStyle={{ color: "black", fontFamily: "Poppins" }}
-            onPress={() => navigation.navigate("Register")}
-          />
+          <View style={styles.containerLogin}>
+            <Text style={styles.titulo}>INICIAR SESION</Text>
+            <Input
+              placeholder="Email"
+              placeholderTextColor="white"
+              inputStyle={{ color: "white" }}
+              errorMessage={errorEmail}
+              errorStyle={{ color: "black" }}
+              onChangeText={(t) => setEmail(t)}
+            />
+            <Input
+              placeholder="Contraseña"
+              placeholderTextColor="white"
+              inputStyle={{ color: "white" }}
+              secureTextEntry={true}
+              errorMessage={errorPassword}
+              errorStyle={{ color: "black" }}
+              onChangeText={(t) => setPassword(t)}
+            />
+            <View style={{ alignItems: "center", margin: 10 }}>
+              <Button
+                title="Ingresar"
+                type="outline"
+                containerStyle={{
+                  backgroundColor: "#F9C400",
+                  width: 150,
+                  marginBottom: 10,
+                }}
+                buttonStyle={{ borderColor: "#F9C400", border: 1 }}
+                titleStyle={{ color: "black", fontFamily: "Poppins" }}
+                onPress={onSubmit}
+              />
+              <Text
+                style={{ color: "white", fontFamily: "Poppins", margin: 5 }}
+              >
+                Ingresar con
+              </Text>
+              <Pressable>
+                <MaterialCommunityIcons name="gmail" size={50} color="white" />
+              </Pressable>
+              <Text
+                style={{ color: "white", fontFamily: "Poppins", margin: 10 }}
+              >
+                No tenes una cuenta?
+              </Text>
+              <Button
+                title="Registrarse"
+                type="outline"
+                containerStyle={{
+                  backgroundColor: "#F9C400",
+                  width: 150,
+                  marginBottom: 10,
+                }}
+                buttonStyle={{ borderColor: "#F9C400", border: 1 }}
+                titleStyle={{ color: "black", fontFamily: "Poppins" }}
+                onPress={() => navigation.navigate("Register")}
+              />
+            </View>
+          </View>
         </View>
-      </View>
-    </View>
+      </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
   );
 };
 
