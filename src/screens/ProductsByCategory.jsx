@@ -3,6 +3,9 @@ import { StyleSheet, FlatList, Dimensions, View } from "react-native";
 import ProductByCategory from "../components/ProductByCategory";
 import Search from "../components/Search";
 import { useGetProductsByCategoryQuery } from "../app/services/shop";
+import Error from "../components/Error";
+import EmptyListComponent from "../components/EmptyListComponent";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const ProductsByCategory = ({ route, navigation }) => {
   const { categorySelected } = route.params;
@@ -20,19 +23,27 @@ const ProductsByCategory = ({ route, navigation }) => {
     setKeyword(k);
   };
   useEffect(() => {
-    if (categorySelected)
-      setProductsFiltered(
-        products.filter((product) => product.category === categorySelected)
-      );
+    setProductsFiltered(products);
     if (keyword)
       setProductsFiltered(
-        productsFiltered.filter((product) => {
+        products.filter((product) => {
           const productTitleLower = product.title.toLowerCase();
           const keywordLower = keyword.toLowerCase();
           return productTitleLower.includes(keywordLower);
         })
       );
-  }, [categorySelected, keyword]);
+  }, [categorySelected, keyword, products]);
+  if (isLoading) return <LoadingSpinner />;
+  if (isError)
+    return (
+      <Error
+        message="¡Ups! Algo salió mal."
+        textButton="Volver"
+        onRetry={() => navigation.goBack()}
+      />
+    );
+  if (isSuccess && products.length === 0)
+    return <EmptyListComponent message="No hay productos de esta categoria" />;
   return (
     <View style={{ backgroundColor: "white" }}>
       <Search handlerKeyword={handlerKeyword} />

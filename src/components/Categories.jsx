@@ -2,9 +2,8 @@ import { FlatList } from "react-native";
 import CardsCategory from "./CardsCategory";
 import { useGetCategoriesQuery } from "../app/services/shop";
 
-const { data: categories } = useGetCategoriesQuery();
-
 const Categories = ({ navigation }) => {
+  const { data: categories } = useGetCategoriesQuery();
   return (
     <FlatList
       data={categories}

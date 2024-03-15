@@ -1,17 +1,30 @@
 import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import CounterProductDetail from "../components/CounterProductDetail";
 import { useGetProductQuery } from "../app/services/shop";
+import LoadingSpinner from "../components/LoadingSpinner";
+import Error from "../components/Error";
+import EmptyListComponent from "../components/EmptyListComponent";
 
-const ProductDetail = ({ route }) => {
+const ProductDetail = ({ navigation, route }) => {
   const { productId } = route.params;
-  const { data: product, isLoading } = useGetProductQuery(productId);
+  const {
+    data: product,
+    isLoading,
+    isError,
+    isSuccess,
+  } = useGetProductQuery(productId);
 
-  if (isLoading)
+  if (isLoading) return <LoadingSpinner />;
+  if (isError)
     return (
-      <View>
-        <Text>cargando...</Text>
-      </View>
+      <Error
+        message="¡Ups! Algo salió mal."
+        textButton="Volver"
+        onRetry={() => navigation.goBack()}
+      />
     );
+  if (isSuccess && product === null)
+    return <EmptyListComponent message="El producto no esta disponible" />;
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
