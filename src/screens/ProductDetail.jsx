@@ -1,26 +1,31 @@
 import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
-import products from "../utils/data/products.json";
-import { useEffect, useState } from "react";
 import CounterProductDetail from "../components/CounterProductDetail";
+import { useGetProductQuery } from "../app/services/shop";
 
 const ProductDetail = ({ route }) => {
   const { productId } = route.params;
-  const [product, setProduct] = useState({});
-  useEffect(() => {
-    const productFinded = products.find((product) => product.id === productId);
-    setProduct(productFinded);
-  }, [productId]);
+  const { data: product, isLoading } = useGetProductQuery(productId);
+
+  if (isLoading)
+    return (
+      <View>
+        <Text>cargando...</Text>
+      </View>
+    );
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
-        <Image style={styles.img} source={{ uri: product.thumbnail }} />
+        <Image
+          style={styles.img}
+          source={{ uri: product?.images ? product.images[0] : null }}
+        />
         <View style={styles.containerText}>
           <Text style={[styles.text, { color: "white" }]}>{product.title}</Text>
           <Text style={[styles.text, { color: "white" }]}>
-            {product.description}
+            {product?.description}
           </Text>
           <Text style={[styles.text, { color: "white" }]}>
-            ${product.price}
+            ${product?.price}
           </Text>
           <CounterProductDetail initialValue={1} product={product} />
         </View>
@@ -36,7 +41,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: "center",
     alignItems: "center",
-    paddingBottom: 70,
+    marginBottom: 80,
   },
   container: {
     backgroundColor: "#AB0000",

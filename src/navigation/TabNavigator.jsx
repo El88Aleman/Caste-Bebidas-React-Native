@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 const TabNavigator = () => {
   return (
     <Tab.Navigator
-      sceneContainerStyle={{ backgroundColor: "white" }}
+      sceneContainerStyle={{ flex: 1 }}
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: "#AB0000",
@@ -24,6 +24,7 @@ const TabNavigator = () => {
           elevation: 0,
           borderWidth: 0,
           height: 70,
+          backgroundColor: "#EFEFEF",
         },
       }}
     >

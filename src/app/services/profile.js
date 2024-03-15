@@ -3,7 +3,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const profileApi = createApi({
   reducerPath: "profileApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://caste-bebidas-react-native-default-rtdb.firebaseio.com",
+    baseUrl:
+      "https://caste-bebidas-react-nati-76ac6-default-rtdb.firebaseio.com",
   }),
   endpoints: (builder) => ({
     putImage: builder.mutation({

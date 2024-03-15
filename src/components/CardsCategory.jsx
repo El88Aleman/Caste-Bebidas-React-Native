@@ -4,6 +4,7 @@ import ShadowPrimary from "./wrappers/ShadowPrimary";
 const CardsCategory = ({ item, navigation }) => {
   return (
     <Pressable
+      style={{ backgroundColor: "white" }}
       onPress={() =>
         navigation.navigate("ProductsByCategory", { categorySelected: item })
       }

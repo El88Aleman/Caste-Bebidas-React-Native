@@ -1,13 +1,24 @@
-import { Pressable, StyleSheet, Text, View, Image } from "react-native";
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableWithoutFeedback,
+  Keyboard,
+  Platform,
+} from "react-native";
 import { Input } from "@rneui/themed";
 import { Button } from "@rneui/themed";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRegisterMutation } from "../app/services/auth";
 import { setUser } from "../features/auth/authSlice";
 import { useDispatch } from "react-redux";
 import { registerSchema } from "../utils/validations/authSchema";
+import { deleteSession, insertSession } from "../utils/db";
+import { KeyboardAvoidingView } from "react-native";
 
 const Register = ({ navigation }) => {
   const { top } = useSafeAreaInsets();
@@ -17,11 +28,35 @@ const Register = ({ navigation }) => {
   const [triggerRegister] = useRegisterMutation();
   const [errorEmail, setErrorEmail] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
+  const [keyboardActive, setKeyboardActive] = useState(false);
+
+  useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener(
+      "keyboardDidShow",
+      () => {
+        setKeyboardActive(true);
+      }
+    );
+
+    const keyboardDidHideListener = Keyboard.addListener(
+      "keyboardDidHide",
+      () => {
+        setKeyboardActive(false);
+      }
+    );
+
+    return () => {
+      keyboardDidShowListener.remove();
+      keyboardDidHideListener.remove();
+    };
+  }, []);
 
   const onSubmit = async () => {
     try {
       registerSchema.validateSync({ email, password });
       const { data } = await triggerRegister({ email, password });
+      deleteSession();
+      insertSession(data);
       dispatch(
         setUser({
           email: data.email,
@@ -46,39 +81,68 @@ const Register = ({ navigation }) => {
   };
 
   return (
-    <View style={{ ...styles.container, top: top }}>
-      <Image
-        style={styles.img}
-        source={{
-          uri: "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707155357/Caste%20Bebidas/xme6decqhdsbponshkag.png",
-        }}
-      />
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : null}
+        style={{ ...styles.container, top: top }}
+        keyboardVerticalOffset={60}
+      >
+        {!keyboardActive && (
+          <Image
+            style={styles.img}
+            source={{
+              uri: "https://res.cloudinary.com/dfcnmxndf/image/upload/v1707155357/Caste%20Bebidas/xme6decqhdsbponshkag.png",
+            }}
+          />
+        )}
 
-      <View style={styles.containerRegister}>
-        <Text style={styles.titulo}>REGISTRARSE</Text>
-        <Input
-          value={email}
-          placeholder="Email"
-          placeholderTextColor="white"
-          inputStyle={{ color: "white" }}
-          errorMessage={errorEmail}
-          errorStyle={{ color: "black" }}
-          onChangeText={(t) => setEmail(t)}
-        />
-        <Input
-          value={password}
-          placeholder="Contraseña"
-          placeholderTextColor="white"
-          inputStyle={{ color: "white" }}
-          secureTextEntry={true}
-          errorMessage={errorPassword}
-          errorStyle={{ color: "black" }}
-          onChangeText={(t) => setPassword(t)}
-        />
-        <View style={{ alignItems: "center", margin: 10 }}>
-          <View>
+        <View style={styles.containerRegister}>
+          <Text style={styles.titulo}>REGISTRARSE</Text>
+          <Input
+            value={email}
+            placeholder="Email"
+            placeholderTextColor="white"
+            inputStyle={{ color: "white" }}
+            errorMessage={errorEmail}
+            errorStyle={{ color: "black" }}
+            onChangeText={(t) => setEmail(t)}
+          />
+          <Input
+            value={password}
+            placeholder="Contraseña"
+            placeholderTextColor="white"
+            inputStyle={{ color: "white" }}
+            secureTextEntry={true}
+            errorMessage={errorPassword}
+            errorStyle={{ color: "black" }}
+            onChangeText={(t) => setPassword(t)}
+          />
+          <View style={{ alignItems: "center", margin: 10 }}>
+            <View>
+              <Button
+                title="Registrarse"
+                type="outline"
+                containerStyle={{
+                  backgroundColor: "#F9C400",
+                  width: 150,
+                  marginBottom: 10,
+                }}
+                buttonStyle={{ borderColor: "#F9C400", border: 1 }}
+                titleStyle={{ color: "black", fontFamily: "Poppins" }}
+                onPress={onSubmit}
+              />
+            </View>
+            <Text style={{ color: "white", fontFamily: "Poppins", margin: 5 }}>
+              Registrarse con
+            </Text>
+            <Pressable>
+              <MaterialCommunityIcons name="gmail" size={50} color="white" />
+            </Pressable>
+            <Text style={{ color: "white", fontFamily: "Poppins", margin: 5 }}>
+              Ya tienes una cuenta?
+            </Text>
             <Button
-              title="Registrarse"
+              title="Inicio de sesion"
               type="outline"
               containerStyle={{
                 backgroundColor: "#F9C400",
@@ -87,33 +151,12 @@ const Register = ({ navigation }) => {
               }}
               buttonStyle={{ borderColor: "#F9C400", border: 1 }}
               titleStyle={{ color: "black", fontFamily: "Poppins" }}
-              onPress={onSubmit}
+              onPress={() => navigation.navigate("Login")}
             />
           </View>
-          <Text style={{ color: "white", fontFamily: "Poppins", margin: 5 }}>
-            Registrarse con
-          </Text>
-          <Pressable>
-            <MaterialCommunityIcons name="gmail" size={50} color="white" />
-          </Pressable>
-          <Text style={{ color: "white", fontFamily: "Poppins", margin: 5 }}>
-            Ya tienes una cuenta?
-          </Text>
-          <Button
-            title="Inicio de sesion"
-            type="outline"
-            containerStyle={{
-              backgroundColor: "#F9C400",
-              width: 150,
-              marginBottom: 10,
-            }}
-            buttonStyle={{ borderColor: "#F9C400", border: 1 }}
-            titleStyle={{ color: "black", fontFamily: "Poppins" }}
-            onPress={() => navigation.navigate("Login")}
-          />
         </View>
-      </View>
-    </View>
+      </KeyboardAvoidingView>
+    </TouchableWithoutFeedback>
   );
 };
 
@@ -123,6 +166,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
+    justifyContent: "center",
     alignItems: "center",
   },
   containerRegister: {
@@ -130,6 +174,8 @@ const styles = StyleSheet.create({
     width: "90%",
     borderRadius: 30,
     marginTop: 40,
+    paddingHorizontal: 20,
+    marginBottom: 20,
   },
   titulo: {
     fontFamily: "Poppins",
@@ -141,7 +187,6 @@ const styles = StyleSheet.create({
   img: {
     width: 200,
     height: 200,
-    marginTop: 20,
     resizeMode: "contain",
   },
 });

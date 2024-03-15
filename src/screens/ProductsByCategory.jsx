@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
-import { StyleSheet, FlatList, Dimensions } from "react-native";
-import products from "../utils/data/products.json";
+import { StyleSheet, FlatList, Dimensions, View } from "react-native";
 import ProductByCategory from "../components/ProductByCategory";
 import Search from "../components/Search";
+import { useGetProductsByCategoryQuery } from "../app/services/shop";
 
 const ProductsByCategory = ({ route, navigation }) => {
   const { categorySelected } = route.params;
+  const {
+    data: products,
+    isError,
+    isLoading,
+    isSuccess,
+    error,
+  } = useGetProductsByCategoryQuery(categorySelected);
   const [productsFiltered, setProductsFiltered] = useState([]);
   const [keyword, setKeyword] = useState("");
 
@@ -27,7 +34,7 @@ const ProductsByCategory = ({ route, navigation }) => {
       );
   }, [categorySelected, keyword]);
   return (
-    <>
+    <View style={{ backgroundColor: "white" }}>
       <Search handlerKeyword={handlerKeyword} />
       <FlatList
         data={productsFiltered}
@@ -37,7 +44,7 @@ const ProductsByCategory = ({ route, navigation }) => {
         )}
         contentContainerStyle={styles.flatListContent}
       />
-    </>
+    </View>
   );
 };
 

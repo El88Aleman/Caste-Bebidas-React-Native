@@ -3,13 +3,17 @@ import { Button } from "@rneui/themed";
 import { useEffect, useState } from "react";
 import * as ImagePicker from "expo-image-picker";
 import { useGetImageQuery, usePutImageMutation } from "../app/services/profile";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { clearUser } from "../features/auth/authSlice";
+import { deleteSession } from "../utils/db";
 
 const Profile = ({ navigation }) => {
+  const dispatch = useDispatch();
   const [image, setImage] = useState();
   const [triggerImage] = usePutImageMutation();
   const localId = useSelector((state) => state.auth.localId);
   const { data, isSuccess } = useGetImageQuery(localId);
+  const idToken = useSelector((state) => state.auth.idToken);
 
   useEffect(() => {
     if (isSuccess && data) setImage(data.image);
@@ -32,6 +36,11 @@ const Profile = ({ navigation }) => {
   const confirmImage = () => {
     triggerImage({ image, localId });
     navigation.goBack();
+  };
+
+  const onLogout = () => {
+    dispatch(clearUser());
+    deleteSession();
   };
   return (
     <View style={styles.container}>
@@ -81,6 +90,23 @@ const Profile = ({ navigation }) => {
         titleStyle={{ color: "white", fontFamily: "Poppins" }}
         onPress={confirmImage}
       />
+      <View>
+        {idToken && (
+          <Button
+            title="Cerrar Session"
+            type="outline"
+            containerStyle={{
+              backgroundColor: "#AB0000",
+              width: 150,
+              marginBottom: 10,
+              borderRadius: 5,
+            }}
+            buttonStyle={{ borderColor: "#AB0000" }}
+            titleStyle={{ color: "white", fontFamily: "Poppins" }}
+            onPress={onLogout}
+          />
+        )}
+      </View>
     </View>
   );
 };
@@ -91,7 +117,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    marginTop: 20,
+
+    backgroundColor: "white",
   },
   img: { width: 200, height: 200, margin: 20, borderRadius: 10 },
 });
