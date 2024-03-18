@@ -41,10 +41,10 @@ const Search = ({ handlerKeyword }) => {
           style={[styles.input, { backgroundColor: "black" }]}
         />
         <Pressable style={styles.icons} onPress={search}>
-          <AntDesign name="search1" size={30} color="black" />
+          <AntDesign name="search1" size={24} color="black" />
         </Pressable>
         <Pressable style={styles.icons} onPress={resetSearch}>
-          <AntDesign name="closecircle" size={30} color="black" />
+          <AntDesign name="closecircle" size={24} color="black" />
         </Pressable>
       </View>
       {error ? <Text style={styles.errorText}>{error}</Text> : null}

@@ -19,9 +19,6 @@ const ProductsByCategory = ({ route, navigation }) => {
   const [productsFiltered, setProductsFiltered] = useState([]);
   const [keyword, setKeyword] = useState("");
 
-  const handlerKeyword = (k) => {
-    setKeyword(k);
-  };
   useEffect(() => {
     setProductsFiltered(products);
     if (keyword)
@@ -44,6 +41,10 @@ const ProductsByCategory = ({ route, navigation }) => {
     );
   if (isSuccess && products.length === 0)
     return <EmptyListComponent message="No hay productos de esta categoria" />;
+
+  const handlerKeyword = (k) => {
+    setKeyword(k);
+  };
   return (
     <View style={{ backgroundColor: "white" }}>
       <Search handlerKeyword={handlerKeyword} />

@@ -5,7 +5,7 @@ const ProductByCategory = ({ item, navigation }) => {
     <View style={styles.container}>
       <Image
         style={styles.img}
-        source={{ uri: item.thumbnail }}
+        source={{ uri: item?.images ? item.images[0] : null }}
         resizeMode="cover"
       />
       <View style={styles.containerText}>

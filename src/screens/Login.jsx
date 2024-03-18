@@ -20,6 +20,7 @@ import { useDispatch } from "react-redux";
 import { useLoginMutation } from "../app/services/auth";
 import { loginSchema } from "../utils/validations/authSchema";
 import { deleteSession, insertSession } from "../utils/db";
+import ModalIncorrectLogin from "../components/modals/ModalIncorrectLogin";
 
 const Login = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ const Login = ({ navigation }) => {
   const [errorEmail, setErrorEmail] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
   const [keyboardActive, setKeyboardActive] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
@@ -68,12 +70,7 @@ const Login = ({ navigation }) => {
     } catch (error) {
       setErrorEmail("");
       setErrorPassword("");
-      Alert.alert("Error", "Contraseña o Email incorrecto", [
-        {
-          text: "Intentar Nuevamente",
-          onPress: () => navigation.navigate("Login"),
-        },
-      ]);
+      setIsModalOpen(true);
     }
   };
 
@@ -147,6 +144,13 @@ const Login = ({ navigation }) => {
             />
           </View>
         </View>
+        {isModalOpen && (
+          <ModalIncorrectLogin
+            navigation={navigation}
+            isModalOpen={isModalOpen}
+            setIsModalOpen={setIsModalOpen}
+          />
+        )}
       </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
   );
