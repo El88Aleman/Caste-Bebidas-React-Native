@@ -18,6 +18,7 @@ const TabNavigator = () => {
         tabBarActiveTintColor: "#AB0000",
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
+          tabBarShowIcon: true,
           position: "absolute",
           paddingTop: 5,
           paddingBottom: 10,

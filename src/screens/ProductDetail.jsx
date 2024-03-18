@@ -40,7 +40,11 @@ const ProductDetail = ({ navigation, route }) => {
           <Text style={[styles.text, { color: "white" }]}>
             ${product?.price}
           </Text>
-          <CounterProductDetail initialValue={1} product={product} />
+          <CounterProductDetail
+            navigation={navigation}
+            initialValue={1}
+            product={product}
+          />
         </View>
       </View>
     </ScrollView>

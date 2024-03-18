@@ -3,12 +3,17 @@ import { AntDesign } from "@expo/vector-icons";
 import { useDispatch } from "react-redux";
 import { addCartItem } from "../features/cart/cartSlice";
 import { useState } from "react";
+import ModalShoppingCart from "./modals/ModalShoppingCart";
+import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 
-const CounterProductDetail = ({ initialValue, product }) => {
+const CounterProductDetail = ({ navigation, initialValue, product }) => {
   const [count, setCount] = useState(initialValue);
   const dispatch = useDispatch();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handlerAddCartItem = (quantity) => {
+    setIsModalOpen(true);
     dispatch(addCartItem({ ...product, quantity }));
     setCount(1);
   };
@@ -17,14 +22,14 @@ const CounterProductDetail = ({ initialValue, product }) => {
     <View style={styles.container}>
       <View style={styles.containerCounter}>
         <Pressable style={styles.containerButton}>
-          <AntDesign name="minus" size={24} color="black" />
+          <FontAwesome5 name="minus" size={24} color="black" />
         </Pressable>
         <Text style={[styles.contador, { color: "white" }]}>{count}</Text>
         <Pressable
           style={styles.containerButton}
           onPress={() => setCount(count + 1)}
         >
-          <AntDesign name="plus" size={24} color="black" />
+          <FontAwesome name="plus" size={24} color="black" />
         </Pressable>
       </View>
       <View>
@@ -37,6 +42,14 @@ const CounterProductDetail = ({ initialValue, product }) => {
           </Text>
         </Pressable>
       </View>
+      {isModalOpen && (
+        <ModalShoppingCart
+          navigation={navigation}
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          handlerAddCartItem={handlerAddCartItem}
+        />
+      )}
     </View>
   );
 };

@@ -19,6 +19,9 @@ export const ordersApi = createApi({
     getOrders: builder.query({
       query: (localId) => `/orders/${localId}.json`,
       transformResponse: (response) => {
+        if (response === null) {
+          return [];
+        }
         const data = Object.entries(response).map((item) => {
           return {
             id: item[0],

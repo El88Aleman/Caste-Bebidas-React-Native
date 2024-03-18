@@ -9,7 +9,7 @@ const ModalIncorrectLogin = ({ navigation, isModalOpen, setIsModalOpen }) => {
     <Modal visible={isModalOpen} transparent={true} animationType={"slide"}>
       <View style={styles.container}>
         <View style={styles.containerModal}>
-          <Text style={{ margin: 10, fontSize: 20 }}>
+          <Text style={{ margin: 10, fontSize: 20, fontFamily: "Poppins" }}>
             Contraseña o Email invalido
           </Text>
           <TouchableOpacity onPress={handleNavigateToLogin}>
@@ -45,5 +45,6 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     color: "white",
     borderRadius: 5,
+    fontFamily: "Poppins",
   },
 });

@@ -11,7 +11,7 @@ const CartItem = ({ item }) => {
     <View style={styles.container}>
       <Image
         style={styles.img}
-        source={{ uri: item.thumbnail }}
+        source={{ uri: item.images[0] }}
         resizeMode="cover"
       />
       <View style={styles.containerText}>
