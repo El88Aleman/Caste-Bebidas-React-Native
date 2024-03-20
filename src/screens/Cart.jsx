@@ -21,6 +21,13 @@ const Cart = ({ navigation }) => {
     dispatch(deleteCart());
     navigation.navigate("OrdersStack");
   };
+  if (cart.items.length === 0) {
+    return (
+      <View style={styles.containerCarritoVacio}>
+        <Text style={styles.carritoVacio}>No tenes nada en el carrito</Text>
+      </View>
+    );
+  }
   return (
     <View style={styles.container}>
       <FlatList
@@ -69,5 +76,15 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins",
     fontSize: 18,
     color: "white",
+  },
+  containerCarritoVacio: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  carritoVacio: {
+    fontSize: 24,
+    fontFamily: "Poppins",
+    color: "gray",
   },
 });
