@@ -14,7 +14,7 @@ export const init = () => {
   });
   return promise;
 };
-export const insertSession = (localId, email, idToken) => {
+export const insertSession = ({ localId, email, idToken }) => {
   const promise = new Promise((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(

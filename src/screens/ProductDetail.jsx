@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 80,
   },
   container: {
     backgroundColor: "#AB0000",
@@ -68,6 +67,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     flexDirection: "column",
     alignItems: "center",
+    marginBottom: 80,
   },
   containerText: {
     marginVertical: 10,

@@ -1,11 +1,14 @@
 import { View, Text, Pressable, StyleSheet, Image } from "react-native";
-import { Entypo } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 import { deleteCartItem } from "../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
 import CounterCart from "./CounterCart";
+import ModalEmpityCart from "./modals/ModalEmpityCart";
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, product }) => {
   const dispatch = useDispatch();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <View style={styles.container}>
@@ -19,7 +22,7 @@ const CartItem = ({ item }) => {
         <Text style={[styles.text, { color: "white" }]}>
           {item.description}
         </Text>
-        <CounterCart item={item} />
+        <CounterCart item={item} product={product} />
         <Text style={[styles.text, { color: "white" }]}>${item.price}</Text>
       </View>
       <View>
@@ -27,9 +30,15 @@ const CartItem = ({ item }) => {
           style={styles.containerButton}
           onPress={() => dispatch(deleteCartItem(item.id))}
         >
-          <Entypo name="trash" size={30} color="white" />
+          <FontAwesome name="trash" size={30} color="white" />
         </Pressable>
       </View>
+      {isModalOpen && (
+        <ModalEmpityCart
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+        />
+      )}
     </View>
   );
 };

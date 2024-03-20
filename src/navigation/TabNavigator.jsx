@@ -3,7 +3,6 @@ import ShopStack from "./ShopStack";
 import CartStack from "./CartStack";
 import { FontAwesome } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
-import { Ionicons } from "@expo/vector-icons";
 import OrdersStack from "./OrdersStack";
 import ProfileStack from "./ProfileStack";
 
@@ -18,14 +17,13 @@ const TabNavigator = () => {
         tabBarActiveTintColor: "#AB0000",
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
-          tabBarShowIcon: true,
           position: "absolute",
           paddingTop: 5,
           paddingBottom: 10,
           elevation: 0,
           borderWidth: 0,
           height: 70,
-          backgroundColor: "#EFEFEF",
+          backgroundColor: "white",
         },
       }}
     >
@@ -47,7 +45,7 @@ const TabNavigator = () => {
         options={{
           tabBarLabel: "Carrito",
           tabBarIcon: ({ color }) => (
-            <FontAwesome5 name="shopping-cart" size={24} color={color} />
+            <FontAwesome name="cart-plus" size={30} color={color} />
           ),
         }}
       />
@@ -69,7 +67,7 @@ const TabNavigator = () => {
         options={{
           tabBarLabel: "Perfil",
           tabBarIcon: ({ color }) => (
-            <Ionicons name="person-sharp" size={24} color={color} />
+            <FontAwesome name="user" size={26} color={color} />
           ),
         }}
       />

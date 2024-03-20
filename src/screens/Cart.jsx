@@ -3,6 +3,7 @@ import CartItem from "../components/CartItem";
 import { useDispatch, useSelector } from "react-redux";
 import { usePostOrderMutation } from "../app/services/orders";
 import { deleteCart } from "../features/cart/cartSlice";
+import { Button } from "@rneui/themed";
 
 const Cart = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -28,10 +29,22 @@ const Cart = ({ navigation }) => {
         renderItem={({ item }) => <CartItem item={item} />}
       />
       <View style={styles.confirmContainer}>
-        <Pressable onPress={handlerAddOrder}>
-          <Text style={styles.confirmText}>Confirmar</Text>
-        </Pressable>
-        <Text style={styles.confirmText}>Total: ${cart.total}</Text>
+        <Button
+          title="Confirmar"
+          type="outline"
+          containerStyle={{
+            backgroundColor: "#F9C400",
+            width: 150,
+            marginBottom: 10,
+          }}
+          buttonStyle={{ borderColor: "#F9C400", border: 1 }}
+          titleStyle={{ color: "black", fontFamily: "Poppins" }}
+          onPress={handlerAddOrder}
+        />
+
+        <View>
+          <Text style={styles.confirmText}>Total: ${cart.total}</Text>
+        </View>
       </View>
     </View>
   );
@@ -50,6 +63,7 @@ const styles = StyleSheet.create({
     backgroundColor: "gray",
     padding: 25,
     justifyContent: "space-between",
+    alignItems: "center",
   },
   confirmText: {
     fontFamily: "Poppins",

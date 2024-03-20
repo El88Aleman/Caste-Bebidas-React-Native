@@ -1,16 +1,15 @@
 import { StyleSheet, View, Text, Pressable } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
 import { useDispatch } from "react-redux";
 import { addCartItem } from "../features/cart/cartSlice";
 import { useState } from "react";
 import ModalShoppingCart from "./modals/ModalShoppingCart";
 import { FontAwesome } from "@expo/vector-icons";
-import { FontAwesome5 } from "@expo/vector-icons";
 
 const CounterProductDetail = ({ navigation, initialValue, product }) => {
   const [count, setCount] = useState(initialValue);
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const stock = product.quantity;
 
   const handlerAddCartItem = (quantity) => {
     setIsModalOpen(true);
@@ -18,18 +17,27 @@ const CounterProductDetail = ({ navigation, initialValue, product }) => {
     setCount(1);
   };
 
+  const handleIncrement = () => {
+    if (count < stock) {
+      setCount(count + 1);
+    }
+  };
+
+  const handleDecrement = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.containerCounter}>
-        <Pressable style={styles.containerButton}>
-          <FontAwesome5 name="minus" size={24} color="black" />
+        <Pressable style={styles.containerButton} onPress={handleDecrement}>
+          <FontAwesome name="minus" size={22} color="black" />
         </Pressable>
         <Text style={[styles.contador, { color: "white" }]}>{count}</Text>
-        <Pressable
-          style={styles.containerButton}
-          onPress={() => setCount(count + 1)}
-        >
-          <FontAwesome name="plus" size={24} color="black" />
+        <Pressable style={styles.containerButton} onPress={handleIncrement}>
+          <FontAwesome name="plus" size={22} color="black" />
         </Pressable>
       </View>
       <View>

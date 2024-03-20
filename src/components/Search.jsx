@@ -7,7 +7,7 @@ import {
   Keyboard,
 } from "react-native";
 import { useState } from "react";
-import { AntDesign } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 
 const Search = ({ handlerKeyword }) => {
   const [input, setInput] = useState("");
@@ -41,10 +41,10 @@ const Search = ({ handlerKeyword }) => {
           style={[styles.input, { backgroundColor: "black" }]}
         />
         <Pressable style={styles.icons} onPress={search}>
-          <AntDesign name="search1" size={24} color="black" />
+          <FontAwesome name="search" size={26} color="black" />
         </Pressable>
         <Pressable style={styles.icons} onPress={resetSearch}>
-          <AntDesign name="closecircle" size={24} color="black" />
+          <FontAwesome name="close" size={30} color="black" />
         </Pressable>
       </View>
       {error ? <Text style={styles.errorText}>{error}</Text> : null}
@@ -73,6 +73,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   icons: {
-    margin: 5,
+    margin: 7,
   },
 });

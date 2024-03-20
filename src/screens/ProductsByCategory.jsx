@@ -46,7 +46,7 @@ const ProductsByCategory = ({ route, navigation }) => {
     setKeyword(k);
   };
   return (
-    <View style={{ backgroundColor: "white" }}>
+    <View style={{ marginBottom: 70 }}>
       <Search handlerKeyword={handlerKeyword} />
       <FlatList
         data={productsFiltered}

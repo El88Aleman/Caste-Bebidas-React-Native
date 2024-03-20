@@ -43,54 +43,62 @@ const Profile = ({ navigation }) => {
     deleteSession();
   };
   return (
-    <View style={styles.container}>
-      <Image
-        source={
-          image ? { uri: image } : require("../../assets/imagenProfile.png")
-        }
-        style={styles.img}
-        resizeMode="cover"
-      />
-      <Button
-        title="Tomar Foto"
-        type="outline"
-        containerStyle={{
-          backgroundColor: "#AB0000",
-          width: 125,
-          marginBottom: 10,
-          borderRadius: 5,
+    <>
+      <View style={styles.container}>
+        <Image
+          source={
+            image ? { uri: image } : require("../../assets/imagenProfile.png")
+          }
+          style={styles.img}
+          resizeMode="cover"
+        />
+        <Button
+          title="Tomar Foto"
+          type="outline"
+          containerStyle={{
+            backgroundColor: "#AB0000",
+            width: 125,
+            marginBottom: 10,
+            borderRadius: 5,
+          }}
+          buttonStyle={{ borderColor: "#AB0000" }}
+          titleStyle={{ color: "white", fontFamily: "Poppins" }}
+          onPress={pickImage}
+        />
+        <Button
+          title="Agregar imagen de galeria"
+          type="outline"
+          containerStyle={{
+            backgroundColor: "#AB0000",
+            width: 240,
+            marginBottom: 10,
+            borderRadius: 5,
+          }}
+          buttonStyle={{ borderColor: "#AB0000" }}
+          titleStyle={{ color: "white", fontFamily: "Poppins" }}
+          onPress={() => console.log("perfil")}
+        />
+        <Button
+          title="Confirmar foto"
+          type="outline"
+          containerStyle={{
+            backgroundColor: "#AB0000",
+            width: 150,
+            marginBottom: 10,
+            borderRadius: 5,
+          }}
+          buttonStyle={{ borderColor: "#AB0000" }}
+          titleStyle={{ color: "white", fontFamily: "Poppins" }}
+          onPress={confirmImage}
+        />
+      </View>
+      <View
+        style={{
+          display: "flex",
+          alignItems: "center",
+          marginBottom: 80,
         }}
-        buttonStyle={{ borderColor: "#AB0000" }}
-        titleStyle={{ color: "white", fontFamily: "Poppins" }}
-        onPress={pickImage}
-      />
-      <Button
-        title="Agregar imagen de galeria"
-        type="outline"
-        containerStyle={{
-          backgroundColor: "#AB0000",
-          width: 240,
-          marginBottom: 10,
-          borderRadius: 5,
-        }}
-        buttonStyle={{ borderColor: "#AB0000" }}
-        titleStyle={{ color: "white", fontFamily: "Poppins" }}
-        onPress={() => console.log("perfil")}
-      />
-      <Button
-        title="Confirmar foto"
-        type="outline"
-        containerStyle={{
-          backgroundColor: "#AB0000",
-          width: 150,
-          marginBottom: 10,
-          borderRadius: 5,
-        }}
-        buttonStyle={{ borderColor: "#AB0000" }}
-        titleStyle={{ color: "white", fontFamily: "Poppins" }}
-        onPress={confirmImage}
-      />
-      <View>
+      >
         {idToken && (
           <Button
             title="Cerrar Session"
@@ -107,7 +115,7 @@ const Profile = ({ navigation }) => {
           />
         )}
       </View>
-    </View>
+    </>
   );
 };
 
@@ -117,8 +125,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-
-    backgroundColor: "white",
   },
   img: { width: 200, height: 200, margin: 20, borderRadius: 10 },
 });

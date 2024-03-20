@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 20,
-    backgroundColor: "white",
   },
   img: {
     width: 100,

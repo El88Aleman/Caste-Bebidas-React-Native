@@ -1,5 +1,5 @@
 import { StyleSheet, View, Text, Pressable } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 import { useDispatch } from "react-redux";
 import { addCartItem } from "../features/cart/cartSlice";
 
@@ -12,8 +12,9 @@ const CounterCart = ({ item }) => {
         <Pressable
           style={styles.containerButton}
           onPress={() => dispatch(addCartItem({ ...item, quantity: -1 }))}
+          disabled={item.quantity === 1}
         >
-          <AntDesign name="minus" size={16} color="black" />
+          <FontAwesome name="minus" size={16} color="black" />
         </Pressable>
         <Text style={[styles.contador, { color: "white" }]}>
           {item.quantity}
@@ -22,7 +23,7 @@ const CounterCart = ({ item }) => {
           style={styles.containerButton}
           onPress={() => dispatch(addCartItem({ ...item, quantity: 1 }))}
         >
-          <AntDesign name="plus" size={16} color="black" />
+          <FontAwesome name="plus" size={16} color="black" />
         </Pressable>
       </View>
     </>

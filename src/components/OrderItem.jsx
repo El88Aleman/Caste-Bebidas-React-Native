@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import { Entypo } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 
 const OrderItem = ({ order }) => {
   return (
@@ -11,7 +11,7 @@ const OrderItem = ({ order }) => {
         <Text style={styles.text}>Catidad: {order.items[0].quantity}</Text>
         <Text style={styles.text2}>Precio: ${order.total}</Text>
       </View>
-      <Entypo name="trash" size={25} color="white" />
+      <FontAwesome name="trash" size={30} color="white" />
     </View>
   );
 };
