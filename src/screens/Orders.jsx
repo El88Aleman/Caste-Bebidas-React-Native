@@ -1,4 +1,4 @@
-import { FlatList, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import OrderItem from "../components/OrderItem";
 import { useSelector } from "react-redux";
 import { useGetOrdersQuery } from "../app/services/orders";
@@ -7,13 +7,14 @@ const Orders = () => {
   const localId = useSelector((state) => state.auth.localId);
   const { data: orders } = useGetOrdersQuery(localId);
 
-  if (orders.length === 0) {
+  if (!orders || orders.length === 0) {
     return (
       <View style={styles.containerSinOrdenes}>
-        <Text style={styles.sinOrdenes}>No tenes nada en el carrito</Text>
+        <Text style={styles.sinOrdenes}>No hay órdenes disponibles</Text>
       </View>
     );
   }
+
   return (
     <View style={{ marginBottom: 80 }}>
       <FlatList

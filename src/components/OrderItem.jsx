@@ -7,9 +7,6 @@ const OrderItem = ({ order }) => {
       <View style={styles.card}>
         <View style={styles.textContainer}>
           <Text style={styles.text}>{order.createdAt}</Text>
-          <Text style={styles.text}>Bebida: {order.items[0].title}</Text>
-          <Text style={styles.text}>Tamaño: {order.items[0].description}</Text>
-          <Text style={styles.text}>Catidad: {order.items[0].quantity}</Text>
           <Text style={styles.text2}>Precio: ${order.total}</Text>
         </View>
         <FontAwesome name="trash" size={30} color="white" />
